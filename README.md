@@ -5,6 +5,23 @@ This is his portfolio v1.0 and you can see more about his work [here](https://ju
 
 
 ## Developers
-This project is a single page app built with [React](https://es.react.dev/) and [TypeScript](https://www.typescriptlang.org/).
+This project is a single page app bootstrapped with [Vite](https://vitejs.dev/), [React](https://es.react.dev/) and [TypeScript](https://www.typescriptlang.org/).
 
+```
+git clone https://github.com/joseda7/juanmartinez-portfolio.git
+```
+```
+cd juanmartinez-portfolio
+```
+```
+npm install
+```
+```
+npm run dev
+```
+open http://localhost:5173/
+
+```
+npm run build
+```
 
