@@ -1,0 +1,27 @@
+.sectionContact {
+    display: flex;
+    align-items: center;
+    background-color: var(--bone);
+
+    &__cont {
+        width: 60%;
+        max-width: 550px;
+        padding-left: var(--left-padding);
+
+        &__email {
+            padding: 20px;
+            border: 1px solid black;
+            cursor: pointer;
+            display: block;
+            width: fit-content;
+            margin: 20px 0;
+        }
+    }
+
+    &__img {
+        width: 40%;
+        position: absolute;
+        right: 0;
+        bottom: 20%;
+    }
+}

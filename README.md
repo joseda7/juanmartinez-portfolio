@@ -5,6 +5,6 @@ This is his portfolio v1.0 and you can see more about his work [here](https://ju
 
 
 ## Developers
-This project is a [PWA](https://developer.mozilla.org/es/docs/Web/Progressive_web_apps) built with the building blocks of the web: **HTML5, CSS3 and JavaScript**.
+This project is a single page app built with [React](https://es.react.dev/) and [TypeScript](https://www.typescriptlang.org/).
 
 

@@ -1,0 +1,50 @@
+.sectionhome {
+    display: flex;
+    align-items: center;
+    background-color: var(--bone);
+}
+
+.sectionhome_head {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    padding: 40px 15px;
+    text-align: center;
+    border: 1px solid var(--dark);
+    z-index: 10;
+}
+
+.sectionhome_head:after {
+    content: "";
+    position:absolute;
+    width: 106%;
+    height: 110%;
+    border: 2px solid var(--dark);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sectionhome_head {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.sectionhome_bird {
+    position: absolute;
+    top: 40%;
+    height: 450px;
+    left: 20%;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.sectionhome_plants {
+    position: absolute;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-54%);
+    pointer-events: none;
+}
