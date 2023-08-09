@@ -8,18 +8,20 @@ interface Props {
     projects?: Array<any>
 }
 
+const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: false
+    // variableWidth: false
+};
+
 const SectionProjects = ( {nameId, projects}:Props ) => {
 
     const [openModal, setOpenModal] = useState(false);
     const [activeProject, setActiveProject] = useState<Project>();
-
-    const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
 
     function handleActiveProject ( _item:any ) {
         setActiveProject(_item);
@@ -66,30 +68,28 @@ const SectionProjects = ( {nameId, projects}:Props ) => {
                 openModal && (
                     <div className="modal">
                         <div className="modal__cont">
-                            <div>
+                            <div className="modal__cont__info">
                                 <h3> { activeProject?.projectTitle } </h3>
+                                <br />
                                 <p> 
-                                    Cliente: { activeProject?.projectCustomer } |
-                                    Año: { activeProject?.projectYear } 
+                                    <b>Cliente:</b> { activeProject?.projectCustomer } |
+                                    <b> Año:</b> { activeProject?.projectYear } 
                                 </p>
-                                <p>
-                                    Rol: { activeProject?.projectRole } 
-                                </p>
-                                <p>
-                                    Técnicas: { activeProject?.projectTechniques }
-                                </p>
-                                <p>
-                                    { activeProject?.projectDescription }
-                                </p>
+                                <p> <b>Rol:</b> { activeProject?.projectRole } </p>
+                                <p> <b>Técnicas:</b> { activeProject?.projectTechniques } </p> 
+                                <div className="separator-sm"></div>
+                                <p> { activeProject?.projectDescription } </p> <br />
+                                <a target="_blank" href={activeProject?.projectLink}> 
+                                    Explora el proyecto 
+                                </a>
                             </div>
-                            <div>
+                            <div className="modal__cont__slider">
                                 <Slider {...sliderSettings}>
                                     {
                                         activeProject?.projectImages.map((item:any, index:any)=>{
                                             return (
                                                 <div key={'image' + index}>
-                                                    <img
-                                                        style = {{ width:'100%' }}  
+                                                    <img 
                                                         src = { item.fields.file.url } 
                                                         alt = { item.fields.title } />
                                                 </div>

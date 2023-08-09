@@ -64,7 +64,7 @@
     height: 100vh;
     top: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(255, 255, 255, 0.712);
     z-index: 100;
 
     &__cont {
@@ -78,11 +78,53 @@
         transform: translate(-50%,-50%);
         background-color: white;
         box-shadow: 0px 4px 14px 0px #00000047;
+        display: flex;
+
+        &__info {
+            width: 30%;
+            padding: 0 20px 0 0;
+            a {
+                background-color: var(--leaf);
+                color: var(--white);
+                padding: 10px 20px;
+                margin: 20px 0;
+                display: block;
+                width: fit-content;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        &__slider {
+            width: 70%;
+            .slick-slider {
+                height: 95%;
+                .slick-list {
+                    height: 100%;
+                    .slick-track {
+                        height: 100%;
+                        .slick-slide {
+                            height: 100%;
+                            div, img {
+                                height: 100%;
+                                text-align: center;
+                                display: block;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+                button.slick-arrow::before {
+                    color: var(--leaf);
+                }
+            }
+        }
 
         &__close {
             position: absolute;
-            right: 10px;
-            top: 10px;
+            right: -20px;
+            top: -20px;
             z-index: 100;
             cursor: pointer;
             background-color: var(--leaf);

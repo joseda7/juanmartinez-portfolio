@@ -11,6 +11,7 @@ interface Props {
 }
 
 const SectionAbout = ({nameId}:Props) => {
+
   return (
     <>
       <section id={nameId} className="section sectionAbout">
@@ -21,7 +22,7 @@ const SectionAbout = ({nameId}:Props) => {
               Mis estudios en diseño gráfico me han permitido comprender las necesidades comunicativas de cada proyecto y proponer soluciones que se han materializado en diferentes formatos editoriales, exposiciones museográficas y formatos digitales como sitios web y aplicativos móviles. El trabajo conjunto con personas expertas y la exploración de técnicas pictóricas tanto análogas como digitales son aspectos importantes de mi trabajo.
               Vivo y trabajo en Medellín, Colombia.
             </p>
-            <br />
+            <div className='separator-sm'></div>
             <br />
             <p> 
               <b>

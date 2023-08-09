@@ -19,13 +19,18 @@ html {
   font-weight: 400;
   --dark: #30332d;
   --darksteel: #686862;
-  --steel: #939186;
+  --steel: #cecdc7;
   --bone: #f9f4de;
   --white: #ffffff;
   --leaf: #95ce63;
   --coral: #eab063;
   --radius-primary: 2px;
-  --font-consolas: 'Consolas';  
+  
+  --fonts-size-h1: 2rem;
+  --fonts-size-h2: 1.7rem;
+  --fonts-size-h3: 1.5rem;
+  --fonts-size-p: 1rem;
+  --fonts-size-p-sm: 0.8rem;
 
   --xs: 420px;
   --sm: 576px;
@@ -34,30 +39,20 @@ html {
   --xl: 1200px;
 
   --left-padding: 10%;
-
-  color-scheme: light dark;
-  color: var(--white);
-  background-color: var(--dark);
 }
+
+h1 { font-size: var(--fonts-size-h1); }
+h2 { font-size: var(--fonts-size-h2); }
+h3 { font-size: var(--fonts-size-h3); }
+p { font-size: var(--fonts-size-p); }
 
 a {
   text-decoration: none;
   color: var(--dark);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--dark);
-    background-color: var(--white);
-  }
-}
-
 ul {
   list-style: none;
-}
-
-ul li {
-  margin: 20px 0;
 }
 
 .section {
@@ -68,12 +63,18 @@ ul li {
 
 .separator {
   width: 95%;
-  height: 1px;
-  background-color: var(--dark);
+  height: 2px;
+  background-color: var(--steel);
   position: absolute;
-  opacity: 0.15;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.separator-sm {
+  width: 40px;
+  height: 2px;
+  background-color: var(--dark);
+  margin: 20px 0 30px;
 }
 

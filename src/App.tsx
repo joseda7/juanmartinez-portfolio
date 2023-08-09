@@ -6,6 +6,7 @@ import SectionContact from "./components/organisms/SectionContact/SectionContact
 import SectionAbout from "./components/organisms/SectionAbout/SectionAbout"
 import SectionProcess from "./components/organisms/SectionProcess/SectionProcess"
 import NavMenu from "./components/molecules/NavMenu/NavMenu"
+import Footer from "./components/atoms/Footer/Footer"
 
 function App() {
 
@@ -61,13 +62,7 @@ function App() {
 
         })
       }
-
-      <footer>
-        <p>
-          Juan Felipe Martínez Tirado · diseñador gráfico e Ilustrador
-        </p> 
-      </footer>
-
+      <Footer/>
     </>
   )
 }
