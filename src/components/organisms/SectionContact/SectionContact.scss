@@ -7,7 +7,10 @@
         width: 60%;
         max-width: 550px;
         padding-left: var(--left-padding);
-
+        @media (max-width:600px) { 
+            width: 100%;
+            padding-left: 0;
+        }
         &__email {
             padding: 20px;
             border: 1px solid black;

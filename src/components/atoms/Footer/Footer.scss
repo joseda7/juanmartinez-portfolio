@@ -1,8 +1,27 @@
 .footer {
     background-color: var(--dark);
     color: var(--white);
-    padding: 15px 20px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 600px) { 
+        flex-direction: column;
+        align-items: center;
+    }
+
     &__txt {
         font-size: var(--fonts-size-p-sm);
+        color: white;
+        @media (max-width: 600px) { 
+            margin-top: 8px;
+            font-size: var(--fonts-size-p-xsm);
+        }
+        a {
+            color: var(--white);
+            &:hover {
+                font-weight: bold;
+            }
+        }
     }
 }

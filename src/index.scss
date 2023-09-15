@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: var(--dark);
 }
 
 body, #root {
@@ -31,6 +32,7 @@ html {
   --fonts-size-h3: 1.5rem;
   --fonts-size-p: 1rem;
   --fonts-size-p-sm: 0.8rem;
+  --fonts-size-p-xsm: 0.7rem;
 
   --xs: 420px;
   --sm: 576px;
@@ -58,7 +60,7 @@ ul {
 .section {
   position: relative;
   min-height: 85vh;
-  padding: 50px 30px;
+  padding: 40px 30px;
 }
 
 .separator {

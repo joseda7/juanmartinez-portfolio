@@ -41,6 +41,7 @@ function App() {
               return (
                 <SectionProcess 
                   nameId = { item.sectionTitle.toLocaleLowerCase() }
+                  body = { item.sectionBody }
                   key = { index }
                 />
               )
@@ -48,6 +49,7 @@ function App() {
               return (
                 <SectionAbout 
                   nameId = { item.sectionTitle.toLocaleLowerCase() }
+                  body = { item.sectionBody }
                   key = { index }
                 />
               )

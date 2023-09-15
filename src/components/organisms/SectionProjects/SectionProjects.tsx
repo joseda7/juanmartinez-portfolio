@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Project } from "../../../interfaces/interfaces"
 import Slider from "react-slick"
+import Icon from "../../atoms/Icon/Icon"
 import "./SectionProjects.scss"
 
 interface Props {
@@ -100,14 +101,12 @@ const SectionProjects = ( {nameId, projects}:Props ) => {
                             </div>
                             <button className="modal__cont__close" 
                                 onClick={()=>{ handleOpenModal(false) }}> 
-                                    X 
+                                    <Icon nameId="cross"/>  
                             </button>
                         </div>
                     </div>
                 )
             }
-
-            <div className="separator"></div>
         </section>
   )
 }

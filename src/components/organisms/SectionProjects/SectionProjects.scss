@@ -1,11 +1,17 @@
 .sectionProjects {
     padding-top: 100px !important;
+    @media (max-width: 600px) { 
+        padding-top: 50px !important;
+    }
 
     &__cont {
         list-style: none;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media (max-width: 600px) { 
+            flex-direction: column;
+        }
     }
 
     &__item {
@@ -14,10 +20,13 @@
         cursor: pointer;
         height: 400px;
         overflow: hidden;
-
+        @media (max-width:600px) { 
+            width: 100%;
+            height: 200px;
+            margin: 10px 0;
+        }
         img {
             display: block;
-            width: 100%;
             object-fit: cover;
         }   
 
@@ -54,6 +63,8 @@
                 opacity: 1;
             }
         }
+
+        
     }
 }
 
@@ -106,6 +117,7 @@
                         height: 100%;
                         .slick-slide {
                             height: 100%;
+                            overflow: hidden;
                             div, img {
                                 height: 100%;
                                 text-align: center;
@@ -117,6 +129,14 @@
                 }
                 button.slick-arrow::before {
                     color: var(--leaf);
+                }
+                button.slick-prev {
+                    left: -10px;
+                    z-index: 10;
+                }
+                button.slick-next {
+                    right: -10px;
+                    z-index: 10;
                 }
             }
         }
@@ -136,7 +156,7 @@
             color: white;
 
             &:hover {
-                opacity: 0.8;
+                background-color: var(--dark);
             }
         }
     }
