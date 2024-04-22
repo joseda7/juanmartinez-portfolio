@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://biodiverzo.com/juanmartinez",
+  "homepage": "https://juanmartineztirado.com/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --base=./",

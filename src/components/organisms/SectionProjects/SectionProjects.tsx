@@ -16,7 +16,6 @@ const sliderSettings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: false
-    // variableWidth: false
 };
 
 const SectionProjects = ( {nameId, projects}:Props ) => {
@@ -27,7 +26,7 @@ const SectionProjects = ( {nameId, projects}:Props ) => {
     function handleActiveProject ( _item:any ) {
         setActiveProject(_item);
         handleOpenModal(true);
-        console.log(_item);
+        // console.log(_item);
     }
 
     function handleOpenModal ( isOpen:boolean ) {
@@ -42,32 +41,38 @@ const SectionProjects = ( {nameId, projects}:Props ) => {
                 className="section sectionProjects" 
                 style={ {backgroundColor:"white"} }>
 
-            <div className="section__body">
+            <h2 className='--show-on-tablet'>
+                {nameId}
+            </h2>        
+            
+            <div className="sectionProjects__body">
                 <ul className="sectionProjects__cont">
                     {
-                        projects?.map((item:any, index:number)=>{
+                        projects && projects?.map(( item:any, index:number )=>{
+                        var project:Project = item.fields;
                         return (
                             <li className="sectionProjects__item" 
-                                key={index} 
-                                onClick={()=>{ handleActiveProject(item.fields) }}>
-
+                                key = { index } 
+                                onClick = { ()=>{ handleActiveProject( item.fields ) }}>
                                 <div className="sectionProjects__item__info">
-                                    <h3> { item.fields.projectTitle } </h3>
-                                    <p> { item.fields.projectYear } </p>
+                                    <h3> { project.projectTitle } </h3>
+                                    <p> { project.projectYear } </p>
                                 </div>
                                 <img
-                                    src={item.fields.projectThumbnail.fields.file.url} 
-                                    alt={item.fields.projectThumbnail.fields.description} />
+                                    src = { project.projectThumbnail.fields.file.url } 
+                                    alt = { project.projectThumbnail.fields.description } />
                                 <div className="sectionProjects__item__filter"></div> 
                             </li>
                         )})
                     }
                 </ul>
             </div>
+            
 
             {
                 openModal && (
                     <div className="modal">
+                        <div id='modal-click-area' onClick={()=>{ handleOpenModal(false) }}></div>
                         <div className="modal__cont">
                             <div className="modal__cont__info">
                                 <h3> { activeProject?.projectTitle } </h3>
@@ -78,11 +83,17 @@ const SectionProjects = ( {nameId, projects}:Props ) => {
                                 </p>
                                 <p> <b>Rol:</b> { activeProject?.projectRole } </p>
                                 <p> <b>Técnicas:</b> { activeProject?.projectTechniques } </p> 
+                                <br/>
                                 <div className="separator-sm"></div>
+                                <br/>
                                 <p> { activeProject?.projectDescription } </p> <br />
-                                <a target="_blank" href={activeProject?.projectLink}> 
-                                    Explora el proyecto 
-                                </a>
+                                {
+                                    activeProject?.projectLink && (    
+                                        <a target="_blank" href={activeProject?.projectLink}> 
+                                            Explora el proyecto 
+                                        </a>
+                                    )
+                                }
                             </div>
                             <div className="modal__cont__slider">
                                 <Slider {...sliderSettings}>
@@ -93,6 +104,7 @@ const SectionProjects = ( {nameId, projects}:Props ) => {
                                                     <img 
                                                         src = { item.fields.file.url } 
                                                         alt = { item.fields.title } />
+                                                    <p> {item.fields.description && item.fields.description} </p>
                                                 </div>
                                             )
                                         })

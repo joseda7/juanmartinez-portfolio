@@ -7,4 +7,5 @@ export type Project = {
     projectDescription?: string
     projectImages?: any
     projectLink?: string
+    projectThumbnail?: any
 }

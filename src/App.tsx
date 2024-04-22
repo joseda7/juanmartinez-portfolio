@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     getSections().then((response)=> {
       setSections(response);
-      console.log(response);
+      // console.log(response);
     })
   },[])
   
@@ -37,7 +37,7 @@ function App() {
                   projects = { item.sectionBody }
                   key = { index }/>
               )
-            case "Proceso":
+            case "Mi proceso":
               return (
                 <SectionProcess 
                   nameId = { item.sectionTitle.toLocaleLowerCase() }
@@ -57,6 +57,7 @@ function App() {
               return (
                 <SectionContact 
                   nameId = { item.sectionTitle.toLocaleLowerCase() }
+                  body = { item.sectionBody }
                   key = { index }
                 />
               )

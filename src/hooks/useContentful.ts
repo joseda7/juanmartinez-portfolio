@@ -25,7 +25,7 @@ const useContentful = () => {
             const entries = await client.getEntries({
                 content_type: "section",
             });
-            console.log(entries);
+            // console.log(entries);
             const sanitazedEntries =  entries.items.map((item)=> {
                 return { ...item.fields }
             })

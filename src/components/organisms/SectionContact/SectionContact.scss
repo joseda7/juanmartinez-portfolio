@@ -1,8 +1,16 @@
 .sectionContact {
-    display: flex;
-    align-items: center;
     background-color: var(--bone);
-
+    &__body {
+        display: flex;
+        align-items: center;
+        padding-top: 70px;
+        max-width: 920px;
+        margin: 0 auto;
+        @media (max-width:600px) { 
+            padding-top: 30px;
+            flex-direction: column-reverse;
+        }
+    }
     &__cont {
         width: 60%;
         max-width: 550px;
@@ -11,13 +19,45 @@
             width: 100%;
             padding-left: 0;
         }
+        & > p {
+            width: 100%;
+            max-width: 320px;
+            margin-bottom: 40px;
+            @media (max-width:600px) { 
+                max-width: inherit;
+            }
+        }
         &__email {
-            padding: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
             border: 1px solid black;
             cursor: pointer;
             display: block;
             width: fit-content;
             margin: 20px 0;
+            letter-spacing: 1px;
+            &:hover {
+                opacity: 0.9;
+            }
+            @media (max-width:600px) { 
+                margin: 0 auto;
+            }
+        }
+        &__social {
+            margin-top: 40px;
+            padding: 0 20px;
+            @media (max-width:600px) { 
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            li {
+                font-size: 1.1rem;
+                margin: 10px 0;
+                letter-spacing: 1px;
+                a:hover {
+                    font-weight: bold;
+                }
+            }
         }
     }
 
@@ -25,6 +65,16 @@
         width: 40%;
         position: absolute;
         right: 0;
-        bottom: 20%;
+        top: 50%;
+        transform: translateY(-50%);
+        @media (max-width:600px) { 
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+            transform: translateY(0px);
+        }
     }
 }
